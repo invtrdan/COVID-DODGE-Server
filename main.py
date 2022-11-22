@@ -3,6 +3,10 @@ from replit import db
 app = Flask('app')
 
 @app.route('/')
+def home():
+  return render_template('homepage.html')
+  
+@app.route('/login')
 def login():
   return render_template('login.html')
 
