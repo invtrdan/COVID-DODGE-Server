@@ -26,8 +26,11 @@ def login():
 def instructions():
   return render_template("instructions.html")
 
-@app.route('/GAME')
-def play_game():
+@app.route("/PlayGame")
+def get_result():
+  result = request.form.to_dict()
+  username = result["username"]
+  score = result["score"]
   return render_template("play_game.html")
 
 @app.route('/leaderboard')
